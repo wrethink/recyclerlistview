@@ -190,10 +190,10 @@ export class WrapGridLayoutManager extends LayoutManager {
         let i = startIndex - 1;
         for (; i >= 0; i--) {
             if (this._isHorizontal) {
-                if (this._layouts[i].y === 0) {
+                if (!this._layouts[i] || this._layouts[i].y === 0) {
                     break;
                 }
-            } else if (this._layouts[i].x === 0) {
+            } else if (!this._layouts[i] || this._layouts[i].x === 0) {
                 break;
             }
         }
